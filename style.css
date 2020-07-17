@@ -1,0 +1,12 @@
+body {
+    margin-top: 20px;
+    background-color: lightblue;
+}
+
+label {
+    font-weight: bold;
+}
+
+#wrapper {
+    width: 500px;
+}
