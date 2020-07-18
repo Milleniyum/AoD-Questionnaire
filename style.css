@@ -4,7 +4,7 @@ body {
     background-color: lightblue;
 }
 
-.jumbotron {
+#header {
     text-align: center;
     width: 100% !important;
     margin-left: 0px !important;
