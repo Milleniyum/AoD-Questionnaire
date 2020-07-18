@@ -20,16 +20,23 @@
 </head>
 
 <body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Angels of Destiny Inc.</h1>
+            <p class="lead">Please complete the questionnaire below so we may provide you with the best experience
+                possible.</p>
+        </div>
+    </div>
     <div class="container" id="wrapper">
         <form>
-            <div class="form-row">
+            <div class="form-row mt-2">
                 <div class="col">
                     <label for="first-name">First Name</label>
-                    <input id="first-name" type="text" class="form-control" placeholder="First name">
+                    <input id="first-name" type="text" class="form-control">
                 </div>
                 <div class="col">
                     <label for="last-name">Last Name</label>
-                    <input id="last-name" type="text" class="form-control" placeholder="Last name">
+                    <input id="last-name" type="text" class="form-control">
                 </div>
             </div>
 
@@ -38,30 +45,99 @@
                 <div class="form-row">
                     <div class="col">
                         <select class="form-control">
-                            <option>January</option>
+                            <option selected>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
                         </select>
                     </div>
                     <div class="col">
                         <select class="form-control">
                             <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
                         </select>
                     </div>
                     <div class="col">
-                        <select class="form-control">
+                        <select id="year" class="form-control">
                             <option>2020</option>
                         </select>
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <label id="label-grade" for="grade">Grade in Fall 2020</label>
+                <select id="grade" class="form-control">
+                    <option selected>1st</option>
+                    <option>2nd</option>
+                    <option>3rd</option>
+                    <option>4th</option>
+                    <option>5th</option>
+                    <option>6th</option>
+                    <option>7th</option>
+                    <option>8th</option>
+                    <option>9th</option>
+                    <option>10th</option>
+                    <option>11th</option>
+                    <option>12th</option>
+                    <option>College-Freshman</option>
+                    <option>College-Sophomore</option>
+                    <option>College-Junior</option>
+                    <option>College-Senior</option>
+                    <option>N/A</option>
+                </select>
+            </div>
 
+            <div class="form-group">
+                <label for="parent">Parent's Name (if under 18)</label>
+                <input type="text" class="form-control" id="parent">
+            </div>
 
-
-
-
+            <div class="form-group">
+                <label for="allergies">Allergies</label>
+                <input type="text" class="form-control" id="allergies">
+            </div>
             <hr>
+
             <div class="form-group">
                 <label for="inputAddress">Mailing Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <input type="text" class="form-control" id="inputAddress">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -71,7 +147,56 @@
                 <div class="form-group col-md-2">
                     <label for="inputState">State</label>
                     <select id="inputState" class="form-control">
+                        <option>AL</option>
+                        <option>AK</option>
+                        <option>AZ</option>
+                        <option>AR</option>
+                        <option>CA</option>
+                        <option>CO</option>
+                        <option>CT</option>
+                        <option>DE</option>
                         <option selected>FL</option>
+                        <option>GA</option>
+                        <option>HI</option>
+                        <option>ID</option>
+                        <option>IL</option>
+                        <option>IN</option>
+                        <option>IA</option>
+                        <option>KS</option>
+                        <option>KY</option>
+                        <option>LA</option>
+                        <option>ME</option>
+                        <option>MD</option>
+                        <option>MA</option>
+                        <option>MI</option>
+                        <option>MN</option>
+                        <option>MS</option>
+                        <option>MO</option>
+                        <option>MT</option>
+                        <option>NE</option>
+                        <option>NV</option>
+                        <option>NH</option>
+                        <option>NJ</option>
+                        <option>NM</option>
+                        <option>NY</option>
+                        <option>NC</option>
+                        <option>ND</option>
+                        <option>OH</option>
+                        <option>OK</option>
+                        <option>OR</option>
+                        <option>PA</option>
+                        <option>RI</option>
+                        <option>SC</option>
+                        <option>SD</option>
+                        <option>TN</option>
+                        <option>TX</option>
+                        <option>UT</option>
+                        <option>VT</option>
+                        <option>VA</option>
+                        <option>WA</option>
+                        <option>WV</option>
+                        <option>WI</option>
+                        <option>WY</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4">
@@ -86,17 +211,126 @@
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                    else.</small>
             </div>
             <hr>
 
-            <div class="form-group">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="grade" </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <label>Favorites</label>
+            <div class="form-group row">
+                <label for="fav-color" class="col-sm-3 col-form-label">Color</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-color">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-clothes" class="col-sm-3 col-form-label">Clothes</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-clothes">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-candy" class="col-sm-3 col-form-label">Candy</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-candy">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-icecream" class="col-sm-3 col-form-label">Ice Cream</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-icecream">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-music" class="col-sm-3 col-form-label">Music</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-music">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-artist" class="col-sm-3 col-form-label">Artist</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-artist">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-song" class="col-sm-3 col-form-label">Song</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-song">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-book" class="col-sm-3 col-form-label">Book</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-book">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-person" class="col-sm-3 col-form-label">Person</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-person">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-saying" class="col-sm-3 col-form-label">Saying</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-saying">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-drink" class="col-sm-3 col-form-label">Drink</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-drink">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-food" class="col-sm-3 col-form-label">Food</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-food">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-game" class="col-sm-3 col-form-label">Game</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-game">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-fruit" class="col-sm-3 col-form-label">Fruit</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-fruit">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-dance" class="col-sm-3 col-form-label">Dance</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-dance">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-clothes" class="col-sm-3 col-form-label">Clothes</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-clothes">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-style" class="col-sm-3 col-form-label">Style</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-style">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fav-app" class="col-sm-3 col-form-label">App</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-app">
+                </div>
+            </div>
+            <hr>
+
+            <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone.</small>
         </form>
+
+        <button class="btn btn-primary btn-block mt-2">Submit</button>
     </div>
+    <script src="index.js"></script>
 </body>
 
 </html>

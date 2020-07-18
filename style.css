@@ -1,10 +1,19 @@
 body {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin-bottom: 20px;
     background-color: lightblue;
+}
+
+.jumbotron {
+    text-align: center;
 }
 
 label {
     font-weight: bold;
+}
+
+.col-form-label {
+    font-weight: normal;
 }
 
 #wrapper {
