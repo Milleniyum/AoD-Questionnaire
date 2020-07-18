@@ -6,6 +6,7 @@ body {
 
 .jumbotron {
     text-align: center;
+    width: 100% !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
 }
