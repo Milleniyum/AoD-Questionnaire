@@ -1,5 +1,5 @@
-const date = new Date();
-const currentYear = date.getFullYear();
+const serverPath = "http://localhost:8080";
+const currentYear = new Date().getFullYear();
 
 //Populate years for ages 21 or less
 yearSelect = $("#dob-year");
@@ -12,45 +12,52 @@ for (let i = 0; i <= 22; i++) {
 $("#label-grade").text(`Grade in Fall ${currentYear}`)
 
 function validateForm(formData) {
-    const { firstName, lastName, dobMonth, dobDay, phone, email } = formData;
+    const { first_name, last_name, dob_month, dob_day, phone, email } = formData;
     let errors = "";
 
-    if (!firstName) errors += `<li>Please enter a first name</li>`;
-    if (!lastName) errors += `<li>Please enter a last name</li>`;
-    if (!phone || !email) errors += `<li>Please enter a phone and/or email</li>`;
+    if (!first_name) errors += `<li>Please enter a first name</li>`;
+    if (!last_name) errors += `<li>Please enter a last name</li>`;
+    if (!phone && !email) errors += `<li>Please enter a phone and/or email</li>`;
 
-    switch (dobMonth) {
+    switch (dob_month) {
         case "September":
         case "April":
         case "June":
         case "November":
-            if (dobDay === 31) errors += `<li>Please enter a valid date-of-birth</li>`;
+            if (dob_day === 31) errors += `<li>Please enter a valid date-of-birth</li>`;
             break;
         case "February":
-            if (dobDay > 29) errors += `<li>Please enter a valid date-of-birth</li>`;
+            if (dob_day > 29) errors += `<li>Please enter a valid date-of-birth</li>`;
             break;
-    }
+    };
 
     if (errors) showAlert(errors)
     else submitForm(formData);
-}
+};
 
 function showAlert(errors) {
     $("#alert-message").html(`<ul>${errors}</ul>`);
     $("#alert-modal").modal("show");
-}
+};
 
 function submitForm(formData) {
     console.log(formData);
-}
+};
+
+function getServerStatus() {
+    $.get(serverPath + "/api/server")
+        .then(response => {
+            console.log(response);
+        });
+};
 
 $("#submit").on("click", function () {
     const formData = {
-        firstName: $("#first-name").val().trim(),
-        lastName: $("#last-name").val().trim(),
-        dobMonth: $("#dob-month").val(),
-        dobDay: parseInt($("#dob-day").val()),
-        dobYear: parseInt($("#dob-year").val()),
+        first_name: $("#first-name").val().trim(),
+        last_name: $("#last-name").val().trim(),
+        dob_month: $("#dob-month").val(),
+        dob_day: parseInt($("#dob-day").val()),
+        dob_year: parseInt($("#dob-year").val()),
         grade: $("#grade").val(),
         parent: $("#parent").val().trim(),
         allergies: $("#allergies").val().trim(),
@@ -60,24 +67,26 @@ $("#submit").on("click", function () {
         zip: parseInt($("#zip").val().trim()),
         phone: $("#phone").val().trim(),
         email: $("#email").val().trim(),
-        favColor: $("#fav-color").val().trim(),
-        favCandy: $("#fav-candy").val().trim(),
-        favIceCream: $("#fav-icecream").val().trim(),
-        favMusic: $("#fav-music").val().trim(),
-        favArtist: $("#fav-artist").val().trim(),
-        favSong: $("#fav-song").val().trim(),
-        favBook: $("#fav-book").val().trim(),
-        favPerson: $("#fav-person").val().trim(),
-        favSaying: $("#fav-saying").val().trim(),
-        favDrink: $("#fav-drink").val().trim(),
-        favFood: $("#fav-food").val().trim(),
-        favFruit: $("#fav-fruit").val().trim(),
-        favGame: $("#fav-game").val().trim(),
-        favDance: $("#fav-dance").val().trim(),
-        favClothes: $("#fav-clothes").val().trim(),
-        favStyle: $("#fav-style").val().trim(),
-        favApp: $("#fav-app").val().trim()
+        fav_color: $("#fav-color").val().trim(),
+        fav_candy: $("#fav-candy").val().trim(),
+        fav_icecream: $("#fav-icecream").val().trim(),
+        fav_music: $("#fav-music").val().trim(),
+        fav_artist: $("#fav-artist").val().trim(),
+        fav_song: $("#fav-song").val().trim(),
+        fav_book: $("#fav-book").val().trim(),
+        fav_person: $("#fav-person").val().trim(),
+        fav_saying: $("#fav-saying").val().trim(),
+        fav_drink: $("#fav-drink").val().trim(),
+        fav_food: $("#fav-food").val().trim(),
+        fav_fruit: $("#fav-fruit").val().trim(),
+        fav_game: $("#fav-game").val().trim(),
+        fav_dance: $("#fav-dance").val().trim(),
+        fav_clothes: $("#fav-clothes").val().trim(),
+        fav_style: $("#fav-style").val().trim(),
+        fav_app: $("#fav-app").val().trim()
     };
 
     validateForm(formData);
-})
+});
+
+getServerStatus();
