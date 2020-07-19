@@ -7,17 +7,8 @@
     <title>AoD Questionnaire</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -45,7 +36,7 @@
                 <label>Birth Date</label>
                 <div class="form-row">
                     <div class="col">
-                        <select class="form-control">
+                        <select id="dob-month" class="form-control">
                             <option selected>January</option>
                             <option>February</option>
                             <option>March</option>
@@ -61,8 +52,8 @@
                         </select>
                     </div>
                     <div class="col">
-                        <select class="form-control">
-                            <option>1</option>
+                        <select id="dob-day" class="form-control">
+                            <option selected>1</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
@@ -96,7 +87,7 @@
                         </select>
                     </div>
                     <div class="col">
-                        <select id="year" class="form-control">
+                        <select id="dob-year" class="form-control">
                             <option>2020</option>
                         </select>
                     </div>
@@ -127,27 +118,28 @@
 
             <div class="form-group">
                 <label for="parent">Parent's Name (if under 18)</label>
-                <input type="text" class="form-control" id="parent">
+                <input id="parent" type="text" class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="allergies">Allergies</label>
-                <input type="text" class="form-control" id="allergies">
+                <input id="allergies" type="text" class="form-control">
             </div>
             <hr>
 
             <div class="form-group">
-                <label for="inputAddress">Mailing Address</label>
-                <input type="text" class="form-control" id="inputAddress">
+                <label for="address">Mailing Address</label>
+                <input id="address" type="text" class="form-control">
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <label for="city">City</label>
+                    <input id="city" type="text" class="form-control">
                 </div>
                 <div class="form-group col-md-2">
-                    <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
+                    <label for="state">State</label>
+                    <select id="state" class="form-control">
                         <option>AL</option>
                         <option>AK</option>
                         <option>AZ</option>
@@ -201,17 +193,17 @@
                     </select>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
+                    <label for="zip">Zip</label>
+                    <input id="zip" type="text" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                <input id="phone" type="tel" class="form-control">
             </div>
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="email">
             </div>
             <hr>
 
@@ -220,12 +212,6 @@
                 <label for="fav-color" class="col-sm-3 col-form-label">Color</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="fav-color">
-                </div>
-            </div>
-            <div class="form-group form-row">
-                <label for="fav-clothes" class="col-sm-3 col-form-label">Clothes</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="fav-clothes">
                 </div>
             </div>
             <div class="form-group form-row">
@@ -289,15 +275,15 @@
                 </div>
             </div>
             <div class="form-group form-row">
-                <label for="fav-game" class="col-sm-3 col-form-label">Game</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="fav-game">
-                </div>
-            </div>
-            <div class="form-group form-row">
                 <label for="fav-fruit" class="col-sm-3 col-form-label">Fruit</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="fav-fruit">
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <label for="fav-game" class="col-sm-3 col-form-label">Game</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fav-game">
                 </div>
             </div>
             <div class="form-group form-row">
@@ -329,8 +315,35 @@
             <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone.</small>
         </form>
 
-        <button class="btn btn-primary btn-block mt-2">Submit</button>
+        <button id="submit" class="btn btn-primary btn-block mt-2">Submit</button>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Errors</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div id="alert-message" class="modal-body">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 
