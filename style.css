@@ -1,13 +1,19 @@
 body {
     /* margin-top: 20px; */
     margin-bottom: 20px;
-    background-color: lightblue;
+    background-color: #FFA0BA;
     font-family: 'Poppins', sans-serif;
     /* font-size: 16px; */
 }
 
+#logo {
+    width: 300px;
+    height: 300px;
+}
+
 .jumbotron {
     text-align: center;
+    background-color: white;
 }
 
 label {
