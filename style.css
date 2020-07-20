@@ -29,6 +29,11 @@ label {
     color: white;
 }
 
+#submitted {
+    text-align: center;
+    width: 100%;
+}
+
 @media (min-width: 500px) {
     #wrapper {
         width: 500px;
