@@ -18,6 +18,8 @@ function validateForm(formData) {
     if (!first_name) errors += `<li>Please enter a first name</li>`;
     if (!last_name) errors += `<li>Please enter a last name</li>`;
     if (!phone && !email) errors += `<li>Please enter a phone and/or email</li>`;
+    if (phone && phone.replace(/\D/g, '').length != 10) errors += `<li>Please enter a valid phone number</li>`;
+    // if (email && !/.+@.+\..+/.test(email)) errors += `<li>Please enter a valid email address</li>`;
 
     switch (dob_month) {
         case "September":
@@ -44,7 +46,8 @@ function submitForm(formData) {
     $.ajax({ url: serverPath + "/api/answers", method: "POST", data: formData })
         .then(response => {
             $("#wrapper").remove();
-            $("#submitted").text("Thank You for Your Submission");
+            countdown();
+            clearInterval(pingServer);
         })
         .catch(err => {
             showAlert("A server error occured. Please try again.")
@@ -100,38 +103,53 @@ $("#submit").on("click", function () {
     validateForm(formData);
 });
 
+function countdown() {
+    let count = 10;
+    function reroute() {
+        if (count === 1) window.location.href = "https://www.angelsofdestiny.org/";
+        else {
+            count--;
+            $("#submitted").html("Thank You for Your Submission<br><br>You will be routed to our website in " + count + " second(s)");
+        }
+    }
+
+    $("#submitted").html("Thank You for Your Submission<br><br>You will be routed to our website in " + count + " second(s)");
+    setInterval(reroute, 1000);
+};
+
+
 //Ping the heroku server to ensure it's up when submitting
-setInterval(getServerStatus, 60000);
+let pingServer = setInterval(getServerStatus, 60000);
 getServerStatus();
 
-$("#first-name").val("Jamie");
-$("#last-name").val("DeLong");
-$("#dob-month").val("February");
-$("#dob-day").val("20");
-$("#dob-year").val("1998");
-$("#grade").val("12th");
-$("#parent").val("Cynthia and Lee DeLong");
-$("#allergies").val("Peanuts");
-$("#address").val("8830 Dunes Ct. 12-307");
-$("#city").val("Kissimmee");
-$("#state").val("FL");
-$("#zip").val("34747");
-$("#phone").val("407-376-8799");
-$("#email").val("jdlong1980@gmail.com");
-$("#fav-color").val("Blue");
-$("#fav-candy").val("Junior Mints");
-$("#fav-icecream").val("Butter Pecan");
-$("#fav-music").val("Pop");
-$("#fav-artist").val("Madonna");
-$("#fav-song").val("Like a Virgin");
-$("#fav-book").val("Discovery of Witches");
-$("#fav-person").val("Maya Angelou");
-$("#fav-saying").val("God Willing and the Crick Don't Rise");
-$("#fav-drink").val("Diet Cranberry Ginger Ale");
-$("#fav-food").val("Mac N Cheese");
-$("#fav-fruit").val("Cherries");
-$("#fav-game").val("World of Warcraft");
-$("#fav-dance").val("The Carlton");
-$("#fav-clothes").val("T-Shirt and Jeans");
-$("#fav-style").val("Baggy");
-$("#fav-app").val("Facebook");
+// $("#first-name").val("Jamie");
+// $("#last-name").val("DeLong");
+// $("#dob-month").val("February");
+// $("#dob-day").val("20");
+// $("#dob-year").val("1998");
+// $("#grade").val("12th");
+// $("#parent").val("Cynthia and Lee DeLong");
+// $("#allergies").val("Peanuts");
+// $("#address").val("8830 Dunes Ct. 12-307");
+// $("#city").val("Kissimmee");
+// $("#state").val("FL");
+// $("#zip").val("34747");
+// $("#phone").val("407-376-8799");
+// $("#email").val("jdlong1980@gmail.com");
+// $("#fav-color").val("Blue");
+// $("#fav-candy").val("Junior Mints");
+// $("#fav-icecream").val("Butter Pecan");
+// $("#fav-music").val("Pop");
+// $("#fav-artist").val("Madonna");
+// $("#fav-song").val("True Blue");
+// $("#fav-book").val("Discovery of Witches");
+// $("#fav-person").val("Maya Angelou");
+// $("#fav-saying").val("God Willing and the Crick Don't Rise");
+// $("#fav-drink").val("Diet Cranberry Ginger Ale");
+// $("#fav-food").val("Mac N Cheese");
+// $("#fav-fruit").val("Cherries");
+// $("#fav-game").val("World of Warcraft");
+// $("#fav-dance").val("The Carlton");
+// $("#fav-clothes").val("T-Shirt and Jeans");
+// $("#fav-style").val("Baggy");
+// $("#fav-app").val("Facebook");

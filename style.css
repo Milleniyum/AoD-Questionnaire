@@ -1,5 +1,5 @@
 body {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     background-color: #FFA0BA;
     font-family: 'Poppins', sans-serif;
 }
@@ -27,6 +27,7 @@ label {
 #alert-modal .modal-header {
     background-color: red;
     color: white;
+    font-size: 14px;
 }
 
 #submitted {
@@ -35,7 +36,7 @@ label {
 }
 
 @media (min-width: 500px) {
-    #wrapper {
+    #wrapper, #login {
         width: 500px;
     }
 }
