@@ -1,4 +1,4 @@
-console.log(window.location.pathname)
+console.log(window.location.host)
 const serverPath = window.location.pathname.includes("Desktop") ? "http://localhost:8080" : "https://serene-hamlet-61538.herokuapp.com";
 console.log(serverPath);
 const currentYear = new Date().getFullYear();
