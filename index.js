@@ -1,4 +1,5 @@
-const serverPath = "http://localhost:8080";
+const serverPath = window.location.pathname.includes("netlify") ? "https://serene-hamlet-61538.herokuapp.com" : "http://localhost:8080";
+console.log(serverPath);
 const currentYear = new Date().getFullYear();
 
 //Populate years for ages 21 or less
@@ -56,13 +57,32 @@ function submitForm(formData) {
 };
 
 function getServerStatus() {
-    $.ajax({ url: serverPath + "/api/server", method: "GET" })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => {
-            console.log(err);
-        })
+    let count = 10; //Ping the server for a max of 10 minutes
+    let intervalPing = setInterval(pingServer, 60000);
+
+    function pingServer() {
+        count--;
+        if (count === 0) return clearInterval(intervalPing);
+        $.ajax({ url: serverPath + "/api/server", method: "GET" })
+            .then(response => {
+                console.log(response);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+};
+
+function countdown() {
+    let count = 10;
+    $("#submitted").html(`Thank You for Your Submission<br><br>You will be routed to our website in ${count} second(s)`);
+    setInterval(reroute, 1000);
+
+    function reroute() {
+        count--;
+        if (count === 1) return window.location.href = "https://www.angelsofdestiny.org/";
+        $("#submitted").html(`Thank You for Your Submission<br><br>You will be routed to our website in ${count} second(s)`);
+    }
 };
 
 $("#submit").on("click", function () {
@@ -103,23 +123,7 @@ $("#submit").on("click", function () {
     validateForm(formData);
 });
 
-function countdown() {
-    let count = 10;
-    function reroute() {
-        if (count === 1) window.location.href = "https://www.angelsofdestiny.org/";
-        else {
-            count--;
-            $("#submitted").html("Thank You for Your Submission<br><br>You will be routed to our website in " + count + " second(s)");
-        }
-    }
-
-    $("#submitted").html("Thank You for Your Submission<br><br>You will be routed to our website in " + count + " second(s)");
-    setInterval(reroute, 1000);
-};
-
-
 //Ping the heroku server to ensure it's up when submitting
-let pingServer = setInterval(getServerStatus, 60000);
 getServerStatus();
 
 // $("#first-name").val("Jamie");
