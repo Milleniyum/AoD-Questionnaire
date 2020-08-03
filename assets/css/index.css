@@ -19,6 +19,10 @@ label {
     font-weight: bold;
 }
 
+#submit {
+    border: 1px solid black;
+}
+
 .col-form-label {
     font-weight: normal;
 }

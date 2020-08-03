@@ -7,7 +7,8 @@
     <title>Admin - AoD Questionnaire</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 
 <body>
@@ -24,6 +25,68 @@
         </form>
         <button id="submit" class="btn btn-primary btn-block mt-2">Submit</button>
     </div>
+
+    <table class="table table-hover table-sm table-responsive mt-4">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Age</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Parent(s)</th>
+                <th scope="col">Allergies</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">favColor</th>
+                <th scope="col">favCandy</th>
+                <th scope="col">favIceCream</th>
+                <th scope="col">favMusic</th>
+                <th scope="col">favArtist</th>
+                <th scope="col">favSong</th>
+                <th scope="col">favBook</th>
+                <th scope="col">favPerson</th>
+                <th scope="col">favSaying</th>
+                <th scope="col">favDrink</th>
+                <th scope="col">favFood</th>
+                <th scope="col">favFruit</th>
+                <th scope="col">favGame</th>
+                <th scope="col">favDance</th>
+                <th scope="col">favClothes</th>
+                <th scope="col">favStyle</th>
+                <th scope="col">favApp</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Errors</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div id="alert-message" class="modal-body">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/admin.js"></script>
 </body>
 
 </html>

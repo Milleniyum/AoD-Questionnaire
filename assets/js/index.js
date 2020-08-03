@@ -48,7 +48,6 @@ function submitForm(formData) {
         .then(response => {
             $("#wrapper").remove();
             countdown();
-            clearInterval(pingServer);
         })
         .catch(err => {
             showAlert("A server error occured. Please try again.")
@@ -61,11 +60,11 @@ function getServerStatus() {
     let intervalPing = setInterval(pingServer, 60000);
 
     function pingServer() {
-        count--;
-        if (count === 0) return clearInterval(intervalPing);
         $.ajax({ url: serverPath + "/api/server", method: "GET" })
             .then(response => {
                 console.log(response);
+                count--;
+                if (count === 0) clearInterval(intervalPing);
             })
             .catch(err => {
                 console.log(err);
@@ -80,7 +79,7 @@ function countdown() {
 
     function reroute() {
         count--;
-        if (count === 1) return window.location.href = "https://www.angelsofdestiny.org/";
+        if (count === 0) return window.location.href = "https://www.angelsofdestiny.org/";
         $("#submitted").html(`Thank You for Your Submission<br><br>You will be routed to our website in ${count} second(s)`);
     }
 };
@@ -89,7 +88,7 @@ $("#submit").on("click", function () {
     const formData = {
         first_name: $("#first-name").val().trim(),
         last_name: $("#last-name").val().trim(),
-        dob_month: $("#dob-month").val(),
+        dob_month: getMonthNum($("#dob-month").val()),
         dob_day: parseInt($("#dob-day").val()),
         dob_year: parseInt($("#dob-year").val()),
         grade: $("#grade").val(),
@@ -123,37 +122,54 @@ $("#submit").on("click", function () {
     validateForm(formData);
 });
 
+function getMonthNum(month) {
+    switch (month) {
+        case "January": return 1;
+        case "February": return 2;
+        case "March": return 3;
+        case "April": return 4;
+        case "May": return 5;
+        case "June": return 6;
+        case "July": return 7;
+        case "August": return 8;
+        case "September": return 9;
+        case "October": return 10;
+        case "November": return 11;
+        case "December": return 12;
+    };
+};
+
 //Ping the heroku server to ensure it's up when submitting
 getServerStatus();
 
-$("#first-name").val("Jamie");
-$("#last-name").val("DeLong");
-$("#dob-month").val("February");
-$("#dob-day").val("20");
-$("#dob-year").val("1998");
-$("#grade").val("12th");
-$("#parent").val("Cynthia and Lee DeLong");
-$("#allergies").val("Peanuts");
-$("#address").val("8830 Dunes Ct. 12-307");
-$("#city").val("Kissimmee");
-$("#state").val("FL");
-$("#zip").val("34747");
-$("#phone").val("407-376-8799");
-$("#email").val("jdlong1980@gmail.com");
-$("#fav-color").val("Blue");
-$("#fav-candy").val("Junior Mints");
-$("#fav-icecream").val("Butter Pecan");
-$("#fav-music").val("Pop");
-$("#fav-artist").val("Madonna");
-$("#fav-song").val("True Blue");
-$("#fav-book").val("Discovery of Witches");
-$("#fav-person").val("Maya Angelou");
-$("#fav-saying").val("God Willing and the Crick Don't Rise");
-$("#fav-drink").val("Diet Cranberry Ginger Ale");
-$("#fav-food").val("Mac N Cheese");
-$("#fav-fruit").val("Cherries");
-$("#fav-game").val("World of Warcraft");
-$("#fav-dance").val("The Carlton");
-$("#fav-clothes").val("T-Shirt and Jeans");
-$("#fav-style").val("Baggy");
-$("#fav-app").val("Facebook");
+// $("#first-name").val("Jamie");
+// $("#last-name").val("DeLong");
+// $("#dob-month").val("February");
+// $("#dob-day").val("20");
+// $("#dob-year").val("1998");
+// $("#grade").val("12th");
+// $("#parent").val("Cynthia and Lee DeLong");
+// $("#allergies").val("Peanuts");
+// $("#address").val("8830 Dunes Ct. 12-307");
+// $("#city").val("Kissimmee");
+// $("#state").val("FL");
+// $("#zip").val("34747");
+// $("#phone").val("407-376-8799");
+// $("#email").val("jdlong1980@gmail.com");
+// $("#fav-color").val("Blue");
+// $("#fav-candy").val("Junior Mints");
+// $("#fav-icecream").val("Butter Pecan");
+// $("#fav-music").val("Pop");
+// $("#fav-artist").val("Madonna");
+// $("#fav-song").val("True Blue");
+// $("#fav-book").val("Discovery of Witches");
+// $("#fav-person").val("Maya Angelou");
+// $("#fav-saying").val("God Willing and the Crick Don't Rise");
+// $("#fav-drink").val("Diet Cranberry Ginger Ale");
+// $("#fav-food").val("Mac N Cheese");
+// $("#fav-fruit").val("Cherries");
+// $("#fav-game").val("World of Warcraft");
+// $("#fav-dance").val("The Carlton");
+// $("#fav-clothes").val("T-Shirt and Jeans");
+// $("#fav-style").val("Baggy");
+// $("#fav-app").val("Facebook");

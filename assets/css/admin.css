@@ -1,0 +1,26 @@
+body {
+    margin: 10px;
+    background-color: #FFA0BA;
+    font-family: 'Poppins', sans-serif;
+}
+
+#submit {
+    border: 1px solid black;
+}
+
+.table {
+    background-color: white;
+    border: 2px solid black;
+}
+
+#alert-modal .modal-header {
+    background-color: red;
+    color: white;
+    font-size: 14px;
+}
+
+@media (min-width: 500px) {
+    #login {
+        width: 500px;
+    }
+}
