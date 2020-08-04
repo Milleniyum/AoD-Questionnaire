@@ -111,6 +111,7 @@ $("#submit").on("click", function (event) {
     login(username, password);
 });
 
+//Retrieve username and password from storage if available
 if (sessionStorage.getItem("username") && sessionStorage.getItem("password")) {
     login(sessionStorage.getItem("username"), sessionStorage.getItem("password"));
 };
