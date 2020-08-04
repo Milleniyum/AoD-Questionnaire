@@ -140,35 +140,3 @@ function getMonthNum(month) {
 
 //Ping the heroku server to ensure it's up when submitting
 getServerStatus();
-
-$("#first-name").val("Jamie");
-$("#last-name").val("DeLong");
-$("#dob-month").val("February");
-$("#dob-day").val("20");
-$("#dob-year").val("1998");
-$("#grade").val("12th");
-$("#parent").val("Cynthia and Lee DeLong");
-$("#allergies").val("Peanuts");
-$("#address").val("8830 Dunes Ct. 12-307");
-$("#city").val("Kissimmee");
-$("#state").val("FL");
-$("#zip").val("34747");
-$("#phone").val("407-376-8799");
-$("#email").val("jdlong1980@gmail.com");
-$("#fav-color").val("Blue");
-$("#fav-candy").val("Junior Mints");
-$("#fav-icecream").val("Butter Pecan");
-$("#fav-music").val("Pop");
-$("#fav-artist").val("Madonna");
-$("#fav-song").val("True Blue");
-$("#fav-book").val("Discovery of Witches");
-$("#fav-person").val("Maya Angelou");
-$("#fav-saying").val("God Willing and the Crick Don't Rise");
-$("#fav-drink").val("Diet Cranberry Ginger Ale");
-$("#fav-food").val("Mac N Cheese");
-$("#fav-fruit").val("Cherries");
-$("#fav-game").val("World of Warcraft");
-$("#fav-dance").val("The Carlton");
-$("#fav-clothes").val("T-Shirt and Jeans");
-$("#fav-style").val("Baggy");
-$("#fav-app").val("Facebook");
