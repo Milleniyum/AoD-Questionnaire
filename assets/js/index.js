@@ -19,17 +19,17 @@ function validateForm(formData) {
     if (!last_name) errors += `<li>Please enter a last name</li>`;
     if (!phone && !email) errors += `<li>Please enter a phone and/or email</li>`;
     if (phone && phone.replace(/\D/g, '').length != 10) errors += `<li>Please enter a valid phone number</li>`;
-    // if (email && !/.+@.+\..+/.test(email)) errors += `<li>Please enter a valid email address</li>`;
+    if (email && !/.+@.+\..+/.test(email)) errors += `<li>Please enter a valid email address</li>`;
 
     switch (dob_month) {
-        case "September":
-        case "April":
-        case "June":
-        case "November":
-            if (dob_day === 31) errors += `<li>Please enter a valid date-of-birth</li>`;
-            break;
-        case "February":
+        case 2:
             if (dob_day > 29) errors += `<li>Please enter a valid date-of-birth</li>`;
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            if (dob_day === 31) errors += `<li>Please enter a valid date-of-birth</li>`;
             break;
     };
 
